@@ -75,7 +75,7 @@ const promptInfo = () => {
 };
 
 const generateREADME = ({title, description, installation, usage, license, contributing, tests, github, email}) => {
-  console.log(licenses[license])
+  // console.log(licenses[license])
   return `# **${title}**
 
 ## Description
