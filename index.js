@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { error } = require('console');
+
 const licenses = {
   'MIT': {
     'name': 'The MIT License',
@@ -128,7 +128,6 @@ Email: ${email}
 
 `;}
 
-const licenseInfo = () => {}
 
 const init = () => {
   promptInfo()
