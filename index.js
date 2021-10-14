@@ -36,14 +36,14 @@ const promptInfo = () => {
       message: 'A brief description of what this project does and who it is for'
     },
     {
-      type: 'input',
+      type: 'editor',
       name: 'installation',
-      message: '',
+      message: 'Enter installation instructions',
     },
     {
       type: 'input',
       name: 'usage',
-      message: '',
+      message: 'Enter usage information',
     },
     {
       type: 'list',
@@ -54,12 +54,12 @@ const promptInfo = () => {
     {
       type: 'input',
       name: 'contributing',
-      message: '',
+      message: 'How can others contribute?',
     },
     {
       type: 'input',
       name: 'tests',
-      message: '',
+      message: 'How can this code be tested?',
     },
     {
       type: 'input',
@@ -79,7 +79,7 @@ const generateREADME = ({title, description, installation, usage, license, contr
   return `# **${title}**
 
 ## Project Description
-___
+
 
 ${description}
 
@@ -88,7 +88,7 @@ ${description}
 ${licenses[license].badge}
 
 ### Table of Contents
-___
+
 - **[Installation Instructions](#installation-instructions)**<br>
 - **[Usage Instructions](#usage-instructions)**<br>
 - **[License](#license)**<br>
@@ -97,34 +97,34 @@ ___
 - **[Question](#questions)**<br>
 
 ## Installation Instructions
-___
+
 ${installation}
 
 ## Usage Instructions
-___
+
 ${usage}
 
 ## License
-___
+
 [${licenses[license].name}](${licenses[license].link})
 
 ${licenses[license].description}
 
 ## Contributing
-___
+
 ${contributing}
 
 ## Tests
-___
+
 ${tests}
 
 ## Question
-___
-Per any questions, please contact
 
-GitHub: ${github}
+Feel free to contact me at: 
 
-Email: ${email}
+**GitHub**: ${github}
+
+**Email**: ${email}
 
 `;}
 
