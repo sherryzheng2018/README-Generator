@@ -78,7 +78,7 @@ const generateREADME = ({title, description, installation, usage, license, contr
   console.log(licenses[license])
   return `# **${title}**
 
-## Project Description
+## Description
 
 
 ${description}
@@ -130,8 +130,13 @@ Feel free to contact me at:
 
 
 const init = () => {
+  const outputdir = './output';
+
+  if (!fs.existsSync(outputdir)){
+      fs.mkdirSync(outputdir);
+  }
   promptInfo()
-    .then((answers)=>fs.writeFileSync('README.md', generateREADME(answers)))
+    .then((answers)=>fs.writeFileSync('output/README.md', generateREADME(answers)))
     .then(()=>console.log('Successfully generated a README'))
     .catch((err)=>console.error(err))
 };
